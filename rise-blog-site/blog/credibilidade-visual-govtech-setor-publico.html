@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Como uma govtech constrói credibilidade visual para ser levada a sério pelo setor público · RISE</title>
+<meta name="description" content="No setor público, percepção de risco decide. Veja como uma govtech usa marca e apresentação para parecer tão madura quanto a solução que entrega.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070508; --surface:#0f0d10; --tx:#f2ede8; --dm:rgba(242,237,232,.62);
+  --or:#E8531A; --line:rgba(255,255,255,.08);
+  --sans:'DM Sans',system-ui,sans-serif; --serif:'Bricolage Grotesque','DM Sans',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ---- HEADER ---- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(7,5,8,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1140px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.brand .dot{width:30px;height:30px;border-radius:8px;background:var(--or);display:grid;place-items:center;font-size:15px;color:#fff;font-weight:800}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:15px;font-weight:500;color:var(--dm);transition:.18s}
+.nav-links a:hover{color:var(--tx)}
+.nav-back{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff !important;
+  padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;transition:.18s}
+.nav-back:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.nav-toggle{display:none;background:none;border:0;color:var(--tx);font-size:22px;cursor:pointer}
+@media(max-width:760px){
+  .nav-links{position:fixed;inset:64px 0 auto 0;background:var(--bg);flex-direction:column;
+    align-items:flex-start;padding:20px 24px;gap:18px;border-bottom:1px solid var(--line);display:none}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .nav-back{padding:9px 16px}
+}
+
+/* ---- LISTAGEM ---- */
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.list-head{text-align:center;padding:90px 24px 60px;max-width:820px;margin:0 auto}
+.eyebrow{display:inline-block;background:rgba(232,83,26,.12);color:var(--or);
+  font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 16px;border-radius:999px;margin-bottom:26px}
+.list-head h1{font-family:var(--serif);font-size:clamp(38px,6vw,62px);font-weight:800;
+  line-height:1.04;letter-spacing:-.03em;margin-bottom:24px}
+.list-head h1 em{font-style:italic;color:var(--or)}
+.list-head p{font-size:18px;color:var(--dm);max-width:620px;margin:0 auto}
+
+/* filtros */
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 auto 50px;max-width:760px;padding:0 24px}
+.filter{background:transparent;border:1px solid var(--line);color:var(--dm);
+  padding:9px 20px;border-radius:999px;font-family:var(--sans);font-size:14px;font-weight:600;
+  cursor:pointer;transition:.18s}
+.filter:hover{border-color:rgba(232,83,26,.5);color:var(--tx)}
+.filter.active{background:var(--or);border-color:var(--or);color:#fff}
+
+/* grid de cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-bottom:100px}
+@media(max-width:920px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;transition:.2s;position:relative}
+.card:hover{transform:translateY(-4px);border-color:rgba(232,83,26,.4)}
+.card-bar{height:5px;width:100%}
+.card-in{padding:26px 24px;display:flex;flex-direction:column;flex:1}
+.card-cat{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.card h2{font-family:var(--serif);font-size:21px;font-weight:700;line-height:1.22;letter-spacing:-.01em;margin-bottom:12px}
+.card p{font-size:14.5px;color:var(--dm);line-height:1.6;flex:1}
+.card-meta{display:flex;gap:18px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:12.5px;color:rgba(242,237,232,.45)}
+.card-meta span{display:inline-flex;align-items:center;gap:6px}
+
+/* ---- ARTIGO ---- */
+.article{max-width:720px;margin:0 auto;padding:70px 24px 40px}
+.article-cat{display:inline-block;background:rgba(232,83,26,.12);color:var(--or);
+  font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  padding:7px 16px;border-radius:999px;margin-bottom:28px}
+.article h1{font-family:var(--serif);font-size:clamp(32px,5.2vw,50px);font-weight:800;
+  line-height:1.06;letter-spacing:-.03em;margin-bottom:24px}
+.article-sub{font-size:19px;color:var(--dm);line-height:1.55;margin-bottom:32px}
+.article-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:rgba(242,237,232,.5);
+  padding-bottom:36px;border-bottom:1px solid var(--line);margin-bottom:44px}
+.article-meta span{display:inline-flex;align-items:center;gap:7px}
+.body{font-size:17.5px;line-height:1.78;color:rgba(242,237,232,.82)}
+.body p{margin-bottom:22px}
+.body h2{font-family:var(--serif);font-size:27px;font-weight:700;color:var(--tx);
+  margin:46px 0 18px;letter-spacing:-.015em;line-height:1.2}
+.body strong{color:var(--tx);font-weight:700}
+.body em{color:var(--tx)}
+.body ul{list-style:none;margin:0 0 24px;padding:0}
+.body li{position:relative;padding-left:26px;margin-bottom:14px}
+.body li::before{content:"";position:absolute;left:3px;top:11px;width:7px;height:7px;
+  border-radius:50%;background:var(--or)}
+
+/* CTA */
+.cta{max-width:720px;margin:70px auto 0;background:var(--or);border-radius:24px;
+  padding:54px 40px;text-align:center}
+.cta h3{font-family:var(--serif);font-size:clamp(26px,4vw,36px);font-weight:800;
+  color:#fff;line-height:1.12;margin-bottom:16px;letter-spacing:-.02em}
+.cta p{color:rgba(255,255,255,.9);font-size:17px;max-width:520px;margin:0 auto 30px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-btns a{padding:15px 30px;border-radius:999px;font-weight:700;font-size:15px;transition:.18s}
+.cta-primary{background:#fff;color:var(--or) !important}
+.cta-secondary{background:rgba(255,255,255,.14);color:#fff !important;border:1px solid rgba(255,255,255,.4)}
+.cta-btns a:hover{transform:translateY(-2px)}
+
+/* relacionados */
+.related{max-width:1140px;margin:90px auto 0;padding:0 24px}
+.related h3{font-family:var(--serif);font-size:30px;font-weight:800;margin-bottom:30px;letter-spacing:-.02em}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:920px){.related-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.related-grid{grid-template-columns:1fr}}
+
+/* footer */
+.foot{border-top:1px solid var(--line);margin-top:100px;padding:50px 24px;text-align:center;
+  color:rgba(242,237,232,.4);font-size:14px}
+.foot a{color:var(--or)}
+.back-top{display:inline-block;margin:60px auto 0;color:var(--dm);font-size:14px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="/blog/" class="brand"><span class="dot">R</span> RISE</a>
+    <button class="nav-toggle" onclick="document.getElementById('nl').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="nl">
+      <a href="/blog/">Blog</a>
+      <a href="https://riseagencia.com/#servicos">Serviços</a>
+      <a href="https://riseagencia.com/#portfolio">Portfólio</a>
+      <a href="https://riseagencia.com/#contato">Contato</a>
+      <a href="https://riseagencia.com" class="nav-back">← Voltar ao site</a>
+    </div>
+  </div>
+</nav>
+<article class="article">
+  <span class="article-cat" style="background:#E8531A22;color:#E8531A">GovTech</span>
+  <h1>Como uma govtech constrói credibilidade visual para ser levada a sério pelo setor público</h1>
+  <p class="article-sub">No setor público, percepção de risco decide. Veja como uma govtech usa marca e apresentação para parecer tão madura quanto a solução que entrega.</p>
+  <div class="article-meta">
+    <span>📅 12 jun 2026</span><span>⏱ 5 min de leitura</span><span>✍ Equipe RISE</span>
+  </div>
+  <div class="body">
+<p>Existe um padrão silencioso entre as govtechs que travam na porta do setor público: a solução é sólida, o time é competente, a tecnologia funciona — mas a empresa <em>parece</em> menor do que é. E no governo, parecer pequeno é um problema concreto, não estético.</p>
+
+<p>O motivo é simples: quem decide uma compra pública está, antes de tudo, gerenciando risco. Um gestor que aprova um fornecedor imaturo coloca a própria reputação em jogo. Então, na ausência de uma relação de confiança já estabelecida, ele lê sinais. E o primeiro sinal que chega — antes da proposta técnica, antes da reunião — é como a sua empresa se apresenta.</p>
+
+<h2>Percepção de maturidade é um critério, mesmo quando não está no edital</h2>
+
+<p>Nenhum edital diz "a empresa precisa ter uma identidade visual bonita". Mas todo avaliador, de forma consciente ou não, pesa se aquele fornecedor transmite solidez. Uma apresentação amadora levanta a pergunta que mata negócio: "se eles não cuidam nem da própria imagem, será que entregam com a seriedade que a gente precisa?"</p>
+
+<p>Não é injusto — é humano. E é exatamente por isso que dá pra trabalhar a favor.</p>
+
+<h2>Os sinais que o setor público lê primeiro</h2>
+
+<p>Antes de avaliar o que você faz, o gestor avalia como você se mostra. Os pontos de maior impacto:</p>
+
+<ul>
+  <li><strong>Identidade consistente.</strong> Logo, cores e tipografia que aparecem iguais no site, na proposta e no e-mail. Inconsistência comunica improviso.</li>
+  <li><strong>Material de apresentação estruturado.</strong> Uma proposta ou dossiê bem diagramado diz "nós já fizemos isso antes" mesmo quando é seu primeiro contrato grande.</li>
+  <li><strong>Presença digital coerente.</strong> Um site que existe, funciona e fala a língua do setor. A ausência de site, hoje, pesa contra.</li>
+  <li><strong>Clareza acima de criatividade.</strong> No setor público, comunicação que é fácil de entender vale mais do que comunicação que impressiona.</li>
+</ul>
+
+<h2>Maturidade visual não é gastar muito — é parecer intencional</h2>
+
+<p>O erro comum é achar que credibilidade exige orçamento alto. Não exige. Exige <strong>intenção</strong>. Uma marca simples, aplicada de forma consistente, transmite mais seriedade do que um design elaborado e bagunçado. O oposto de amador não é caro: é coerente.</p>
+
+<p>Na prática, isso significa três decisões tomadas de uma vez e respeitadas em tudo: uma paleta de cores definida, uma ou duas tipografias fixas, e um logo usado sempre do mesmo jeito. A partir daí, cada documento que sai da sua empresa reforça a mesma impressão de solidez.</p>
+
+<h2>O ponto cego: a empresa investe no produto e esquece da percepção</h2>
+
+<p>Times de govtech costumam ser técnicos, e por isso investem quase tudo no produto. Faz sentido — mas cria um descompasso: a solução está no nível de uma empresa madura, e a apresentação está no nível de quem acabou de começar. Esse desalinhamento é caro, porque o avaliador não vê o seu código; ele vê a sua proposta.</p>
+
+<p>Fechar essa lacuna costuma ser o investimento de maior retorno numa govtech em fase de escala: você não muda o produto, muda a forma como ele é percebido — e isso pode ser a diferença entre passar ou não passar do primeiro filtro.</p>
+
+<h2>Por onde começar</h2>
+
+<p>Se a sua govtech está mirando contratos públicos e a imagem ainda não acompanha a ambição, comece pelo que o avaliador vê primeiro: a identidade de marca e o material de apresentação. Site vem logo em seguida. Não é vaidade — é reduzir o risco percebido de quem vai decidir sobre você.</p>
+
+<p>No fim, a regra é direta: <strong>o setor público compra confiança antes de comprar tecnologia.</strong> Quem entende isso cedo larga na frente.</p>
+  </div>
+</article>
+
+<section class="cta">
+  <h3>Sua comunicação está pronta para vender?</h3>
+  <p>A RISE constrói marca, site e captação que transformam atenção em cliente. Vamos conversar sobre o seu negócio.</p>
+  <div class="cta-btns">
+    <a href="https://riseagencia.com/#contato" class="cta-primary">Falar com a RISE</a>
+    <a href="https://riseagencia.com/#servicos" class="cta-secondary">Ver serviços</a>
+  </div>
+</section>
+<section class="related">
+  <h3>Outros artigos que podem te interessar</h3>
+  <div class="related-grid">
+
+    <article class="card" data-cat="GovTech">
+      <a href="/blog/marca-percepcao-maturidade-licitacoes.html" style="display:flex;flex-direction:column;flex:1">
+        <div class="card-bar" style="background:#E8531A"></div>
+        <div class="card-in">
+          <div class="card-cat" style="color:#E8531A">GovTech</div>
+          <h2>Marca não é luxo: por que percepção de maturidade pesa em licitações e editais</h2>
+          <p>Marca não é enfeite para quem vende ao governo. Entenda como a percepção de maturidade influencia decisões em licitações e editais — e como construí-la.</p>
+          <div class="card-meta">
+            <span>📅 11 jun 2026</span><span>⏱ 5 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card" data-cat="GovTech">
+      <a href="/blog/pitch-apresentacao-gestor-publico.html" style="display:flex;flex-direction:column;flex:1">
+        <div class="card-bar" style="background:#E8531A"></div>
+        <div class="card-in">
+          <div class="card-cat" style="color:#E8531A">GovTech</div>
+          <h2>O pitch começa antes da fala: o que sua apresentação comunica ao gestor público</h2>
+          <p>Antes da primeira palavra, sua apresentação já comunicou algo ao gestor público. Veja o que ela diz — e como fazer essa primeira impressão jogar a seu favor.</p>
+          <div class="card-meta">
+            <span>📅 10 jun 2026</span><span>⏱ 4 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card" data-cat="Branding">
+      <a href="/blog/logo-nao-e-marca.html" style="display:flex;flex-direction:column;flex:1">
+        <div class="card-bar" style="background:#C9A227"></div>
+        <div class="card-in">
+          <div class="card-cat" style="color:#C9A227">Branding</div>
+          <h2>Logo não é marca: o mal-entendido que faz negócios parecerem amadores</h2>
+          <p>Confundir logo com marca é o erro que mantém pequenos negócios parecendo amadores. Entenda a diferença — e o que de fato constrói uma marca.</p>
+          <div class="card-meta">
+            <span>📅 09 jun 2026</span><span>⏱ 4 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  </div>
+  <div style="text-align:center">
+    <a href="/blog/" class="back-top">← Ver todos os artigos</a>
+  </div>
+</section>
+
+<footer class="foot">
+  © 2026 RISE · Design &amp; Branding · Manaus, AM · <a href="https://riseagencia.com">Voltar ao site</a>
+</footer>
+<script>
+document.querySelector('.nav-toggle').addEventListener('click',()=>document.getElementById('nl').classList.toggle('open'));
+</script>
+</body></html>
